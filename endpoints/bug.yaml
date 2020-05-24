@@ -1,0 +1,17 @@
+post:
+  summary: Create a bug
+  operationId: createBug
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../types/bug.yaml#/Create'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            properties:
+              id:
+                type: integer

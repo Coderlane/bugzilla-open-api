@@ -1,0 +1,20 @@
+openapi: 3.0.2
+info:
+  title: Bugzilla OpenAPI
+  description: OpenAPI definitions for Bugzilla's REST API
+  version: 0.0.1
+externalDocs:
+  description: Bugzilla API Documentation
+  url: https://bugzilla.readthedocs.io/en/latest/api/
+servers:
+- url: '{base}/rest'
+  description: The Bugzilla server
+  variables:
+    base:
+      description: The base Bugzilla endpoint
+      default: http://bmo.test
+paths:
+  '/bug':
+    '$ref': './endpoints/bug.yaml'
+  '/bug/id':
+    '$ref': './endpoints/bug-by-id.yaml'

@@ -1,0 +1,19 @@
+Flag:
+  type: object
+  properties:
+    id:
+      type: integer
+    name:
+      type: string
+    type:
+      type: string
+    description:
+      type: string
+    values:
+      type: array
+      items:
+        type: string
+    is_requesteeble:
+      type: boolean
+    is_multiplicable:
+      type: boolean

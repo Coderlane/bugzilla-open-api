@@ -1,0 +1,11 @@
+User:
+  type: object
+  properties:
+    nick:
+      type: string
+    id:
+      type: integer
+    name:
+      type: string
+    real_name:
+      type: string
