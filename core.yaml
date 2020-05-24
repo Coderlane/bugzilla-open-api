@@ -28,6 +28,18 @@ paths:
     '$ref': './endpoints/attachment.yaml'
   '/whoami':
     '$ref': './endpoints/whoami.yaml'
+  '/version':
+    '$ref': './endpoints/version.yaml'
+  '/extensions':
+    '$ref': './endpoints/extensions.yaml'
+  '/timezone':
+    '$ref': './endpoints/timezone.yaml'
+  '/time':
+    '$ref': './endpoints/time.yaml'
+  '/parameters':
+    '$ref': './endpoints/parameters.yaml'
+  '/last_audit_time':
+    '$ref': './endpoints/last_audit_time.yaml'
 components:
   securitySchemes:
     ApiKeyAuth:

@@ -1,0 +1,14 @@
+get:
+  summary: Get the version of the Bugzilla instance
+  operationId: getVersion
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            title: GetVersionResponse
+            type: object
+            properties:
+              version:
+                type: string

@@ -1,0 +1,16 @@
+get:
+  summary: Get the installed extensions of the Bugzilla instance
+  operationId: getExtensions
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            title: GetExtensionsResponse
+            type: object
+            additionalProperties:
+              type: object
+              properties:
+                version:
+                  type: string

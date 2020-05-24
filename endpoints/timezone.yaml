@@ -1,0 +1,14 @@
+get:
+  summary: Get the timezone on the Bugzilla instance
+  operationId: getTimezone
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            title: GetTimezoneResponse
+            type: object
+            properties:
+              timezone:
+                type: string

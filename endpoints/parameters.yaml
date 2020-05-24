@@ -1,0 +1,12 @@
+get:
+  summary: Get the parameters of the Bugzilla instance
+  operationId: getParameters
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            title: GetParametersResponse
+            type: object
+            description: A dictionary of parameters

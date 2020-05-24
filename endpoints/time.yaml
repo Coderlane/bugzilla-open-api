@@ -1,0 +1,18 @@
+get:
+  summary: Get the time on the Bugzilla instance
+  operationId: getTime
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            title: GetTimeResponse
+            type: object
+            properties:
+              db_time:
+                type: string
+                format: date-time
+              web_time:
+                type: string
+                format: date-time
