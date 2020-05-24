@@ -1,0 +1,19 @@
+post:
+  summary: Create a component
+  operationId: createComponent
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../types/component.yaml#/CreateComponent'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            title: CreateComponentResponse
+            type: object
+            properties:
+              id:
+                type: integer

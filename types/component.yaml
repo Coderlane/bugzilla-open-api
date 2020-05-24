@@ -26,3 +26,93 @@ Component:
           type: array
           items:
             '$ref': './flag.yaml#/Flag'
+
+CreateComponent:
+  type: object
+  properties:
+    name:
+      type: string
+    product:
+      type: string
+    description:
+      type: string
+    default_assignee:
+      type: string
+    default_cc:
+      type: array
+      items:
+        type: string
+    default_qa_contact:
+      type: string
+    is_open:
+      type: boolean
+
+CreateComponentResponse:
+  type: object
+
+UpdateComponent:
+  type: object
+  properties:
+    ids:
+      type: array
+      items:
+        type: integer
+    names:
+      type: array
+      items:
+        type: integer
+    name:
+      type: string
+    description:
+      type: string
+    default_assignee:
+      type: string
+    default_cc:
+      type: array
+      items:
+        type: string
+    default_qa_contact:
+      type: string
+    is_open:
+      type: boolean
+
+UpdateComponentResponse:
+  type: object
+  properties:
+    components:
+      type: array
+      items:
+        type: object
+        properties:
+          changes:
+            type: object
+            additionalProperties:
+              type: object
+              properties:
+                added:
+                  type: string
+                removed:
+                  type: string
+
+DeleteComponent:
+  type: object
+  properties:
+    ids:
+      type: array
+      items:
+        type: integer
+    names:
+      type: array
+      items:
+        type: string
+
+DeleteComponentResponse:
+  type: object
+  properties:
+    components:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: integer

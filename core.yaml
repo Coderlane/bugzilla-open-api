@@ -34,6 +34,12 @@ paths:
     '$ref': './endpoints/product.yaml'
   '/product/{id}':
     '$ref': './endpoints/product-by-id.yaml'
+  '/component':
+    '$ref': './endpoints/component.yaml'
+  '/component/{id}':
+    '$ref': './endpoints/component-by-id.yaml'
+  '/component/{product_name}/{component_name}':
+    '$ref': './endpoints/component-by-name.yaml'
   '/whoami':
     '$ref': './endpoints/whoami.yaml'
   '/version':

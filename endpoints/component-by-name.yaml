@@ -1,0 +1,55 @@
+put:
+  summary: Update a component or components
+  operationId: updateComponentByName
+  parameters:
+    - in: path
+      name: product_name
+      schema:
+        type: string
+      required: true
+    - in: path
+      name: component_name
+      schema:
+        type: string
+      required: true
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../types/component.yaml#/UpdateComponent'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/component.yaml#/UpdateComponentResponse'
+
+delete:
+  summary: Delete a component
+  operationId: deleteComponentByName
+  parameters:
+    - in: path
+      name: product_name
+      schema:
+        type: string
+      required: true
+    - in: path
+      name: component_name
+      schema:
+        type: string
+      required: true
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../types/component.yaml#/DeleteComponent'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/component.yaml#/DeleteComponentResponse'
+
+
