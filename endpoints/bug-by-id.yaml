@@ -14,4 +14,4 @@ get:
       content:
         application/json:
           schema:
-            '$ref': '../types/bug.yaml#/Response'
+            '$ref': '../types/bug.yaml#/BugResponse'

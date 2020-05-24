@@ -1,4 +1,4 @@
-Response:
+CommentResponse:
   type: object
   properties:
     comments:
@@ -40,7 +40,7 @@ Comment:
       items:
         type: string
 
-Create:
+CreateComment:
   type: object
   required:
   - comment

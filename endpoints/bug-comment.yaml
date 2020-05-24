@@ -14,7 +14,7 @@ get:
       content:
         application/json:
           schema:
-            '$ref': '../types/comment.yaml#/Response'
+            '$ref': '../types/comment.yaml#/CommentResponse'
 
 post:
   summary: Create comment on a bug
@@ -30,7 +30,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../types/bug.yaml#/Create'
+          $ref: '../types/comment.yaml#/CreateComment'
   responses:
     '200':
       description: Successful operation
