@@ -302,14 +302,14 @@ UpdateBug:
     qa_contact:
       type: string
     is_creator_accessible:
-      type: bool
+      type: boolean
     remaining_time:
       type: number
       format: double
     reset_assigned_to:
-      type: bool
+      type: boolean
     reset_qa_contact:
-      type: bool
+      type: boolean
     resolution:
       type: string
     see_also:
