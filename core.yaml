@@ -20,3 +20,11 @@ paths:
     '$ref': './endpoints/bug-by-id.yaml'
   '/bug/{id}/comment':
     '$ref': './endpoints/bug-comment.yaml'
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-BUGZILLA-API-KEY
+security:
+  - ApiKeyAuth: []
