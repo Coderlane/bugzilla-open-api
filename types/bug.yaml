@@ -356,3 +356,41 @@ UpdateBugResponse:
                 type: string
               removed:
                 type: string
+
+ChangeResponse:
+  type: object
+  properties:
+    field_name:
+      type: string
+    added:
+      type: string
+    removed:
+      type: string
+    attachment_id:
+      type: integer
+
+HistoryResponse:
+  type: object
+  properties:
+    when:
+      type: string
+      format: date-time
+    who:
+      type: string
+    changes:
+      type: array
+      items:
+      '$ref': '#/ChangeResponse'
+
+GetBugHistoryResponse:
+  type: object
+  properties:
+    id:
+      type: integer
+    alias:
+      type: array
+      items:
+        type: string
+    history:
+      '$ref': '#/HistoryResponse'
+

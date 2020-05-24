@@ -1,0 +1,22 @@
+get:
+  summary: Get history for a bug
+  operationId: getBugHistory
+  parameters:
+  - name: id
+    in: path
+    description: ID of the bug
+    required: true
+    schema:
+      type: integer
+  - name: new_since
+    in: query
+    schema:
+      type: string
+      format: date-time
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/bug.yaml#/GetBugHistoryResponse'
