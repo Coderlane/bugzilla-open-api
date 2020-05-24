@@ -56,5 +56,5 @@ CreateComment:
     is_markdown:
       type: boolean
     work_time:
-      type: numeric
+      type: number
       format: double
