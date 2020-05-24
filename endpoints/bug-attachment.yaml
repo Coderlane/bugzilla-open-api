@@ -1,0 +1,45 @@
+get:
+  summary: Get attachments on a bug
+  operationId: getBugAttachments
+  parameters:
+  - name: id
+    in: path
+    description: ID of the bug
+    required: true
+    schema:
+      type: integer
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/attachment.yaml#/GetAttachmentResponse'
+
+post:
+  summary: Create an attachement on a bug
+  operationId: createBugAttachment
+  parameters:
+  - name: id
+    in: path
+    description: ID of the bug
+    required: true
+    schema:
+      type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../types/attachment.yaml#/CreateAttachment'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ids:
+                type: array
+                items:
+                  type: integer

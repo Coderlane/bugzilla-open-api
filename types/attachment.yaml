@@ -1,0 +1,123 @@
+GetAttachment:
+  type: object
+  properties:
+    data:
+      type: string
+      format: byte
+    size:
+      type: integer
+    creation_time:
+      type: string
+      format: date-time
+    id:
+      type: integer
+    bug_id:
+      type: integer
+    file_name:
+      type: string
+    summary:
+      type: string
+    content_type:
+      type: string
+    is_private:
+      type: boolean
+    is_obsolete:
+      type: boolean
+    creator:
+      type: string
+
+CreateAttachment:
+  type: object
+  required:
+  - ids
+  - data
+  - file_name
+  - summary
+  - content_type
+  properties:
+    ids:
+      type: array
+      items:
+        type: integer
+    data:
+      type: string
+      format: byte
+    file_name:
+      type: string
+    summary:
+      type: string
+    content_type:
+      type: string
+    comment:
+      type: string
+    is_patch:
+      type: boolean
+    is_private:
+      type: boolean
+    is_markdown:
+      type: boolean
+    flags:
+      type: array
+      items:
+        '$ref': './flag.yaml#/Flag'
+
+GetAttachmentResponse:
+  type: object
+  properties:
+    bugs:
+      type: object
+      additionalProperties:
+        '$ref': '#/GetAttachment'
+    attachments:
+      type: object
+      additionalProperties:
+        '$ref': '#/GetAttachment'
+
+UpdateAttachment:
+  type: object
+  required:
+  - ids
+  properties:
+    file_name:
+      type: string
+    summary:
+      type: string
+    comment:
+      type: string
+    is_markdown:
+      type: boolean
+    content_type:
+      type: string
+    is_patch:
+      type: boolean
+    is_private:
+      type: boolean
+    is_obsolete:
+      type: boolean
+    flags:
+      type: array
+      items:
+        '$ref': './flag.yaml#/Flag'
+
+UpdateAttachmentResponse:
+  type: object
+  properties:
+    attachments:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: integer
+          last_change_time:
+            type: string
+            format: date-time
+          changes:
+            type: object
+            additionalProperties:
+              type: object
+              properties:
+                added:
+                  type: string
+                removed:
+                  type: string

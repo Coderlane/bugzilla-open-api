@@ -22,6 +22,10 @@ paths:
     '$ref': './endpoints/bug-comment.yaml'
   '/bug/{id}/history':
     '$ref': './endpoints/bug-history.yaml'
+  '/bug/{id}/attachment':
+    '$ref': './endpoints/bug-attachment.yaml'
+  '/bug/attachment/{id}':
+    '$ref': './endpoints/attachment.yaml'
   '/whoami':
     '$ref': './endpoints/whoami.yaml'
 components:

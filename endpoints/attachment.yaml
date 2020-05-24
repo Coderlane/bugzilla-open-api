@@ -1,0 +1,40 @@
+get:
+  summary: Get an attachment
+  operationId: getAttachment
+  parameters:
+  - name: id
+    in: path
+    description: ID of the attachment
+    required: true
+    schema:
+      type: integer
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/attachment.yaml#/GetAttachmentResponse'
+
+put:
+  summary: Update an attachment
+  operationId: updateAttachment
+  parameters:
+  - name: id
+    in: path
+    description: ID of the attachment
+    required: true
+    schema:
+      type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../types/attachment.yaml#/UpdateAttachment'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/attachment.yaml#/UpdateAttachmentResponse'
