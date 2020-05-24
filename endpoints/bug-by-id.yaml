@@ -15,3 +15,26 @@ get:
         application/json:
           schema:
             '$ref': '../types/bug.yaml#/BugResponse'
+
+put:
+  summary: Update a bug
+  operationId: updateBug
+  parameters:
+  - name: id
+    in: path
+    description: ID of the bug
+    required: true
+    schema:
+      type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../types/bug.yaml#/UpdateBug'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/bug.yaml#/UpdateBugResponse'

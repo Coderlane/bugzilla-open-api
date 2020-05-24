@@ -187,3 +187,172 @@ CreateBug:
       type: array
       items:
         '$ref': './flag.yaml#/Flag'
+
+UpdateStringArray:
+  type: object
+  properties:
+    add:
+      type: array
+      items:
+        type: string
+    remove:
+      type: array
+      items:
+        type: string
+
+UpdateStringSet:
+  type: object
+  properties:
+    add:
+      type: array
+      items:
+        type: string
+    remove:
+      type: array
+      items:
+        type: string
+    set:
+      type: array
+      items:
+        type: string
+
+UpdateIntegerSet:
+  type: object
+  properties:
+    add:
+      type: array
+      items:
+        type: integer
+    remove:
+      type: array
+      items:
+        type: integer
+    set:
+      type: array
+      items:
+        type: integer
+
+UpdateFlag:
+  type: object
+  properties:
+    name:
+      type: string
+    type_id:
+      type: integer
+    status:
+      type: string
+    requestee:
+      type: string
+    id:
+      type: integer
+    new:
+      type: boolean
+
+UpdateBug:
+  type: object
+  properties:
+    alias:
+      '$ref': '#/UpdateStringSet'
+    assigned_to:
+      type: string
+    blocks:
+      '$ref': '#/UpdateIntegerSet'
+    depends_on:
+      '$ref': '#/UpdateIntegerSet'
+    cc:
+      '$ref': '#/UpdateStringArray'
+    is_cc_accessible:
+      type: boolean
+    comment:
+      '$ref': './comment.yaml#/CreateComment'
+    comment_is_private:
+      type: object
+      additionalProperties:
+        type: boolean
+    comment_tags:
+      type: array
+      items:
+        type: string
+    component:
+      type: string
+    deadline:
+      type: string
+      format: date
+    dupe_of:
+      type: integer
+    estimated_time:
+      type: number
+      format: double
+    flags:
+      type: array
+      items:
+      '$ref': '#/UpdateFlag'
+    groups:
+      '$ref': '#/UpdateStringArray'
+    keywords:
+      '$ref': '#/UpdateStringSet'
+    op_sys:
+      type: string
+    platform:
+      type: string
+    priority:
+      type: string
+    product:
+      type: string
+    qa_contact:
+      type: string
+    is_creator_accessible:
+      type: bool
+    remaining_time:
+      type: number
+      format: double
+    reset_assigned_to:
+      type: bool
+    reset_qa_contact:
+      type: bool
+    resolution:
+      type: string
+    see_also:
+      '$ref': '#/UpdateStringArray'
+    severity:
+      type: string
+    status:
+      type: string
+    summary:
+      type: string
+    target_milestone:
+      type: string
+    url:
+      type: string
+    version:
+      type: string
+    whiteboard:
+      type: string
+    work_time:
+      type: number
+      format: double
+
+UpdateBugResponse:
+  type: object
+  properties:
+    bugs:
+      type: object
+      properties:
+        id:
+          type: integer
+        alias:
+          type: array
+          items:
+            type: string
+        last_change_time:
+          type: string
+          format: date-time
+        changes:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              added:
+                type: string
+              removed:
+                type: string
