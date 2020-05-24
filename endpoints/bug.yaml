@@ -12,6 +12,8 @@ post:
       content:
         application/json:
           schema:
+            title: CreateBugResponse
+            type: object
             properties:
               id:
                 type: integer

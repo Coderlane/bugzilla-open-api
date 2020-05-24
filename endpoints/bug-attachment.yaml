@@ -37,6 +37,7 @@ post:
       content:
         application/json:
           schema:
+            title: CreateBugAttachmentResponse
             type: object
             properties:
               ids:
