@@ -20,6 +20,8 @@ paths:
     '$ref': './endpoints/bug-by-id.yaml'
   '/bug/{id}/comment':
     '$ref': './endpoints/bug-comment.yaml'
+  '/whoami':
+    '$ref': './endpoints/whoami.yaml'
 components:
   securitySchemes:
     ApiKeyAuth:

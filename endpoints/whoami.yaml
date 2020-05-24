@@ -1,0 +1,10 @@
+get:
+  summary: Get the current user.
+  operationId: whoAmI
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/user.yaml#/User'
