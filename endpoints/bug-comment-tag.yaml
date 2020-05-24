@@ -1,0 +1,23 @@
+get:
+  summary: Search for comment tags similar to the provided tag
+  operationId: searchCommentTag
+  parameters:
+  - name: tag
+    in: path
+    description: The tag name or partial tag name to search for
+    required: true
+    schema:
+      type: string
+  - name: limit
+    in: query
+    description: The maximum number of tags to return
+    schema:
+      type: integer
+      default: 10
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/comment.yaml#/CommentTagResponse'

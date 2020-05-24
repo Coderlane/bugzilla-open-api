@@ -1,0 +1,23 @@
+put:
+  summary: Update tags on a comment
+  operationId: updateCommentTag
+  parameters:
+  - name: id
+    in: path
+    description: The ID of the comment to update tags on
+    required: true
+    schema:
+      type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          '$ref': '../types/comment.yaml#/UpdateCommentTag'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            title: UpdateCommentTagResponse
+            '$ref': '../types/comment.yaml#/CommentTagResponse'

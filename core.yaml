@@ -20,6 +20,10 @@ paths:
     '$ref': './endpoints/bug-by-id.yaml'
   '/bug/{id}/comment':
     '$ref': './endpoints/bug-comment.yaml'
+  '/bug/comment/tags/{tag}':
+    '$ref': './endpoints/bug-comment-tag.yaml'
+  '/bug/comment/{id}/tags':
+    '$ref': './endpoints/bug-comment-tag-update.yaml'
   '/bug/{id}/history':
     '$ref': './endpoints/bug-history.yaml'
   '/bug/{id}/attachment':

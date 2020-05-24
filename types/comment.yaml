@@ -58,3 +58,24 @@ CreateComment:
     work_time:
       type: number
       format: double
+
+UpdateCommentTag:
+  type: object
+  required:
+  - comment_id
+  properties:
+    comment_id:
+      type: integer
+    add:
+      type: array
+      items:
+        type: string
+    remove:
+      type: array
+      items:
+        type: string
+
+CommentTagResponse:
+  type: array
+  items:
+    type: string
