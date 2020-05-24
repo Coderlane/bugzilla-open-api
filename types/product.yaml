@@ -1,0 +1,115 @@
+ProductType:
+  type: string
+  enum: [accessible, selectable,  enterable]
+
+Version:
+  type: object
+  properties:
+    name:
+      type: string
+    sort_key:
+      type: integer
+    is_active:
+      type: boolean
+
+Milestone:
+  type: object
+  properties:
+    name:
+      type: string
+    sort_key:
+      type: integer
+    is_active:
+      type: boolean
+
+Product:
+  type: object
+  properties:
+    id:
+      type: integer
+    name:
+      type: string
+    description:
+      type: string
+    default_milestone:
+      type: string
+    has_unconfirmed:
+      type: boolean
+    classification:
+      type: string
+    components:
+      type: array
+      items:
+        '$ref': './component.yaml#/Component'
+    versions:
+      type: array
+      items:
+        '$ref': '#/Version'
+    milestones:
+      type: array
+      items:
+        '$ref': '#/Milestone'
+
+UpdateProduct:
+  type: object
+  properties:
+    name:
+      type: string
+    default_milestone:
+      type: string
+    description:
+      type: string
+    has_unconfirmed:
+      type: boolean
+    is_open:
+      type: boolean
+
+UpdateProductResponse:
+  type: object
+  properties:
+    products:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: integer
+          changes:
+            type: object
+            additionalProperties:
+              type: object
+              properties:
+                added:
+                  type: string
+                removed:
+                  type: string
+
+CreateProduct:
+  type: object
+  required:
+    - name
+    - description
+    - version
+  properties:
+    name:
+      type: string
+    version:
+      type: string
+    has_unconfirmed:
+      type: boolean
+    classification:
+      type: string
+    default_milestone:
+      type: string
+    is_open:
+      type: boolean
+    create_series:
+      type: boolean
+
+GetProductResponse:
+  type: object
+  properties:
+    products:
+      type: array
+      items:
+        '$ref': '#/Product'

@@ -30,6 +30,10 @@ paths:
     '$ref': './endpoints/bug-attachment.yaml'
   '/bug/attachment/{id}':
     '$ref': './endpoints/attachment.yaml'
+  '/product':
+    '$ref': './endpoints/product.yaml'
+  '/product/{id}':
+    '$ref': './endpoints/product-by-id.yaml'
   '/whoami':
     '$ref': './endpoints/whoami.yaml'
   '/version':

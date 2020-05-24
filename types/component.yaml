@@ -1,0 +1,28 @@
+Component:
+  type: object
+  properties:
+    id:
+      type: integer
+    name:
+      type: string
+    description:
+      type: string
+    default_assigned_to:
+      type: string
+    default_qa_contact:
+      type: string
+    sort_key:
+      type: integer
+    is_active:
+      type: boolean
+    flag_types:
+      type: object
+      properties:
+        bug:
+          type: array
+          items:
+            '$ref': './flag.yaml#/Flag'
+        attachment:
+          type: array
+          items:
+            '$ref': './flag.yaml#/Flag'

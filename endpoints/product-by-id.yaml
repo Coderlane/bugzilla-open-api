@@ -1,0 +1,50 @@
+get:
+  summary: Get a product
+  operationId: getProduct
+  parameters:
+    - in: path
+      name: id
+      schema:
+        type: integer
+      required: true
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/product.yaml#/GetProductResponse'
+
+put:
+  summary: Update a product or products
+  operationId: updateProduct
+  parameters:
+    - in: path
+      name: id
+      schema:
+        type: integer
+      required: true
+    - in: query
+      name: ids
+      schema:
+        type: array
+        items:
+          type: string
+    - in: query
+      name: names
+      schema:
+        type: array
+        items:
+          type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../types/product.yaml#/UpdateProduct'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/product.yaml#/UpdateProductResponse'

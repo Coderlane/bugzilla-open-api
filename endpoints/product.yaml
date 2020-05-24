@@ -1,0 +1,49 @@
+get:
+  summary: Search for products
+  operationId: searchProducts
+  parameters:
+    - in: query
+      name: ids
+      schema:
+        type: array
+        items:
+          type: string
+    - in: query
+      name: names
+      schema:
+        type: array
+        items:
+          type: string
+    - in: query
+      name: type
+      schema:
+        type: array
+        items:
+          '$ref': '../types/product.yaml#/ProductType'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/product.yaml#/GetProductResponse'
+
+post:
+  summary: Create a product
+  operationId: createProduct
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../types/product.yaml#/CreateProduct'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            title: CreateProductResponse
+            type: object
+            properties:
+              id:
+                type: integer
