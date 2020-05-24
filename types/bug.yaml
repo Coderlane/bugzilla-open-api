@@ -111,7 +111,6 @@ Bug:
     whiteboard:
       type: string
 
-
 Response:
   type: object
   properties:

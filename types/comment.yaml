@@ -1,0 +1,60 @@
+Response:
+  type: object
+  properties:
+    comments:
+      '$ref': '#/Comment'
+    bugs:
+      type: object
+      additionalProperties:
+        type: object
+        properties:
+          comments:
+            type: array
+            items:
+              '$ref': '#/Comment'
+
+Comment:
+  type: object
+  properties:
+    id:
+      type: integer
+    bug_id:
+      type: integer
+    attachment_id:
+      type: integer
+    count:
+      type: integer
+    text:
+      type: string
+    creator:
+      type: string
+    creation_time:
+      type: string
+      format: date-time
+    is_private:
+      type: boolean
+    is_markdown:
+      type: boolean
+    tags:
+      type: array
+      items:
+        type: string
+
+Create:
+  type: object
+  required:
+  - comment
+  properties:
+    comment:
+      type: string
+    comment_tags:
+      type: array
+      items:
+        type: string
+    is_private:
+      type: boolean
+    is_markdown:
+      type: boolean
+    work_time:
+      type: numeric
+      format: double

@@ -1,0 +1,42 @@
+get:
+  summary: Get comments on a bug
+  operationId: getBugComments
+  parameters:
+  - name: id
+    in: path
+    description: ID of the bug
+    required: true
+    schema:
+      type: integer
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/comment.yaml#/Response'
+
+post:
+  summary: Create comment on a bug
+  operationId: createBugComment
+  parameters:
+  - name: id
+    in: path
+    description: ID of the bug
+    required: true
+    schema:
+      type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../types/bug.yaml#/Create'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            properties:
+              id:
+                type: integer

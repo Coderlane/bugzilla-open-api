@@ -18,3 +18,5 @@ paths:
     '$ref': './endpoints/bug.yaml'
   '/bug/id':
     '$ref': './endpoints/bug-by-id.yaml'
+  '/bug/{id}/comment':
+    '$ref': './endpoints/bug-comment.yaml'
