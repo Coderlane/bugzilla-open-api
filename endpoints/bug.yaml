@@ -23,6 +23,96 @@ get:
   operationId: searchBugs
   parameters:
     - in: query
+      name: assigned_to
+      schema:
+        type: string
+    - in: query
+      name: component
+      schema:
+        type: string
+    - in: query
+      name: creation_time
+      schema:
+        type: string
+        format: date-time
+    - in: query
+      name: creator
+      schema:
+        type: string
+    - in: query
+      name: id
+      schema:
+        type: integer
+    - in: query
+      name: last_change_time
+      schema:
+        type: string
+        format: date-time
+    - in: query
+      name: limit
+      schema:
+        type: integer
+    - in: query
+      name: offset
+      schema:
+        type: integer
+    - in: query
+      name: op_sys
+      schema:
+        type: string
+    - in: query
+      name: platform
+      schema:
+        type: string
+    - in: query
+      name: priority
+      schema:
+        type: string
+    - in: query
+      name: product
+      schema:
+        type: string
+    - in: query
+      name: resolution
+      schema:
+        type: string
+    - in: query
+      name: severity
+      schema:
+        type: string
+    - in: query
+      name: status
+      schema:
+        type: string
+    - in: query
+      name: summary
+      schema:
+        type: string
+    - in: query
+      name: tags
+      schema:
+        type: string
+    - in: query
+      name: target_milestone
+      schema:
+        type: string
+    - in: query
+      name: qa_contact
+      schema:
+        type: string
+    - in: query
+      name: url
+      schema:
+        type: string
+    - in: query
+      name: version
+      schema:
+        type: string
+    - in: query
+      name: whiteboard
+      schema:
+        type: string
+    - in: query
       name: quicksearch
       schema:
         type: string
