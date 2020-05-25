@@ -17,3 +17,80 @@ Flag:
       type: boolean
     is_multiplicable:
       type: boolean
+
+FlagTypes:
+  type: object
+  properties:
+    bug:
+      type: array
+      items:
+        '$ref': './flag.yaml#/Flag'
+    attachment:
+      type: array
+      items:
+        '$ref': './flag.yaml#/Flag'
+
+ItemMap:
+  type: object
+  additionalProperties:
+    type: array
+    items:
+      type: string
+
+InclusionExclusion:
+  oneOf:
+    - type: array
+      items:
+        type: string
+    - '$ref': '#/ItemMap'
+
+CreateFlag:
+  type: object
+  required:
+    - name
+    - description
+  properties:
+    name:
+      type: string
+    description:
+      type: string
+    target_type:
+      type: string
+      enum: [bug, attachment]
+    inclusions:
+      '$ref': '#/InclusionExclusion'
+    exclusions:
+      '$ref': '#/InclusionExclusion'
+    sort_key:
+      type: integer
+      minimum: 1
+      maximum: 32767
+    is_active:
+      type: boolean
+    is_requestable:
+      type: boolean
+    is_specifically_requestable:
+      type: boolean
+    is_multiplicable:
+      type: boolean
+    grant_group:
+      type: string
+    request_group:
+      type: string
+    cc_list:
+      type: array
+      items:
+        type: string
+
+UpdateFlagResponse:
+  type: object
+  properties:
+    flagtypes:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        changes:
+          '$ref': './common.yaml#/ChangeSet'

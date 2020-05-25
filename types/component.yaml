@@ -16,16 +16,7 @@ Component:
     is_active:
       type: boolean
     flag_types:
-      type: object
-      properties:
-        bug:
-          type: array
-          items:
-            '$ref': './flag.yaml#/Flag'
-        attachment:
-          type: array
-          items:
-            '$ref': './flag.yaml#/Flag'
+      '$ref': './flag.yaml#/FlagTypes'
 
 CreateComponent:
   type: object

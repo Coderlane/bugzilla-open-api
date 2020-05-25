@@ -40,6 +40,14 @@ paths:
     '$ref': './endpoints/component-by-id.yaml'
   '/component/{product_name}/{component_name}':
     '$ref': './endpoints/component-by-name.yaml'
+  '/flags_type':
+    '$ref': './endpoints/flag.yaml'
+  '/flags_type/{id}':
+    '$ref': './endpoints/flag-by-id.yaml'
+  '/flags_type/{product}':
+    '$ref': './endpoints/flag-by-product.yaml'
+  '/flags_type/{product}/{component}':
+    '$ref': './endpoints/flag-by-product-component.yaml'
   '/user':
     '$ref': './endpoints/user.yaml'
   '/user/{id}':

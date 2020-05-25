@@ -1,0 +1,19 @@
+post:
+  summary: Create a flag
+  operationId: createFlag
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../types/flag.yaml#/CreateFlag'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            title: CreateFlagResponse
+            type: object
+            properties:
+              id:
+                type: integer

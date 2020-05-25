@@ -1,0 +1,21 @@
+get:
+  summary: Get flags types on a component on a product
+  operationId: getFlagsByProductAndComponent
+  parameters:
+    - in: path
+      name: product
+      schema:
+        type: string
+      required: true
+    - in: path
+      name: component
+      schema:
+        type: string
+      required: true
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/flag.yaml#/FlagTypes'
