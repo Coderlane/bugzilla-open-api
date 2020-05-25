@@ -68,14 +68,7 @@ UpdateProductResponse:
   type: object
   properties:
     products:
-      type: array
-      items:
-        type: object
-        properties:
-          id:
-            type: integer
-          changes:
-            '$ref': './common.yaml#/ChangeSet'
+      '$ref': './common.yaml#/UpdateChangeSetResponse'
 
 CreateProduct:
   type: object

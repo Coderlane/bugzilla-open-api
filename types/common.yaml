@@ -51,3 +51,13 @@ ChangeSet:
         type: string
       removed:
         type: string
+
+UpdateChangeSetResponse:
+  type: array
+  items:
+    type: object
+    properties:
+      id:
+        type: integer
+      changes:
+        '$ref': '#/ChangeSet'

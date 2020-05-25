@@ -111,11 +111,4 @@ UpdateUserResponse:
   type: object
   properties:
     users:
-      type: array
-      items:
-        type: object
-        properties:
-          id:
-            type: integer
-          changes:
-            '$ref': './common.yaml#/ChangeSet'
+      '$ref': './common.yaml#/UpdateChangeSetResponse'
