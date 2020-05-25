@@ -40,6 +40,10 @@ paths:
     '$ref': './endpoints/component-by-id.yaml'
   '/component/{product_name}/{component_name}':
     '$ref': './endpoints/component-by-name.yaml'
+  '/user':
+    '$ref': './endpoints/user.yaml'
+  '/user/{id}':
+    '$ref': './endpoints/user-by-id.yaml'
   '/whoami':
     '$ref': './endpoints/whoami.yaml'
   '/version':

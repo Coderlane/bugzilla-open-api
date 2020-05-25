@@ -188,50 +188,6 @@ CreateBug:
       items:
         '$ref': './flag.yaml#/Flag'
 
-UpdateStringArray:
-  type: object
-  properties:
-    add:
-      type: array
-      items:
-        type: string
-    remove:
-      type: array
-      items:
-        type: string
-
-UpdateStringSet:
-  type: object
-  properties:
-    add:
-      type: array
-      items:
-        type: string
-    remove:
-      type: array
-      items:
-        type: string
-    set:
-      type: array
-      items:
-        type: string
-
-UpdateIntegerSet:
-  type: object
-  properties:
-    add:
-      type: array
-      items:
-        type: integer
-    remove:
-      type: array
-      items:
-        type: integer
-    set:
-      type: array
-      items:
-        type: integer
-
 UpdateFlag:
   type: object
   properties:
@@ -252,15 +208,15 @@ UpdateBug:
   type: object
   properties:
     alias:
-      '$ref': '#/UpdateStringSet'
+      '$ref': './common.yaml#/StringSet'
     assigned_to:
       type: string
     blocks:
-      '$ref': '#/UpdateIntegerSet'
+      '$ref': './common.yaml#/IntegerSet'
     depends_on:
-      '$ref': '#/UpdateIntegerSet'
+      '$ref': './common.yaml#/IntegerSet'
     cc:
-      '$ref': '#/UpdateStringArray'
+      '$ref': './common.yaml#/StringArray'
     is_cc_accessible:
       type: boolean
     comment:
@@ -288,9 +244,9 @@ UpdateBug:
       items:
       '$ref': '#/UpdateFlag'
     groups:
-      '$ref': '#/UpdateStringArray'
+      '$ref': './common.yaml#/StringArray'
     keywords:
-      '$ref': '#/UpdateStringSet'
+      '$ref': './common.yaml#/StringSet'
     op_sys:
       type: string
     platform:
@@ -313,7 +269,7 @@ UpdateBug:
     resolution:
       type: string
     see_also:
-      '$ref': '#/UpdateStringArray'
+      '$ref': './common.yaml#/StringArray'
     severity:
       type: string
     status:
@@ -348,14 +304,7 @@ UpdateBugResponse:
           type: string
           format: date-time
         changes:
-          type: object
-          additionalProperties:
-            type: object
-            properties:
-              added:
-                type: string
-              removed:
-                type: string
+          '$ref': './common.yaml#/ChangeSet'
 
 ChangeResponse:
   type: object
@@ -393,4 +342,3 @@ GetBugHistoryResponse:
         type: string
     history:
       '$ref': '#/HistoryResponse'
-

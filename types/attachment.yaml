@@ -113,11 +113,4 @@ UpdateAttachmentResponse:
             type: string
             format: date-time
           changes:
-            type: object
-            additionalProperties:
-              type: object
-              properties:
-                added:
-                  type: string
-                removed:
-                  type: string
+            '$ref': './common.yaml#/ChangeSet'

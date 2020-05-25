@@ -1,7 +1,7 @@
 User:
   type: object
   properties:
-    nick:
+    email:
       type: string
     id:
       type: integer
@@ -9,3 +9,113 @@ User:
       type: string
     real_name:
       type: string
+
+Group:
+  type: object
+  properties:
+    id:
+      type: integer
+    name:
+      type: string
+    description:
+      type: string
+
+Search:
+  type: object
+  properties:
+    id:
+      type: integer
+    name:
+      type: string
+    search:
+      type: string
+
+FullUser:
+  type: object
+  properties:
+    email:
+      type: string
+    id:
+      type: integer
+    name:
+      type: string
+    real_name:
+      type: string
+    can_login:
+      type: boolean
+    email_enabled:
+      type: boolean
+    groups:
+      type: array
+      items:
+        '$ref': '#/Group'
+    saved_searches:
+      type: array
+      items:
+        '$ref': '#/Search'
+    saved_reports:
+      type: array
+      items:
+        '$ref': '#/Search'
+
+CreateUser:
+  type: object
+  required:
+  - login
+  - email
+  properties:
+    login:
+      type: string
+    email:
+      type: string
+    password:
+      type: string
+    full_name:
+      type: string
+
+GetUserResponse:
+  type: object
+  properties:
+    users:
+      type: array
+      items:
+        '$ref': '#/FullUser'
+
+UpdateUser:
+  type: object
+  properties:
+    ids:
+      type: array
+      items:
+        type: integer
+    names:
+      type: array
+      items:
+        type: string
+    full_name:
+      type: string
+    email:
+      type: string
+    password:
+      type: string
+    email_enabled:
+      type: boolean
+    login_denied_text:
+      type: string
+    groups:
+      '$ref': './common.yaml#/IntegerSet'
+    bless_groups:
+      '$ref': './common.yaml#/IntegerSet'
+
+UpdateUserResponse:
+  type: object
+  properties:
+    users:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: integer
+          changes:
+            '$ref': './common.yaml#/ChangeSet'

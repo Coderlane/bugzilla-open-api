@@ -85,14 +85,7 @@ UpdateComponentResponse:
         type: object
         properties:
           changes:
-            type: object
-            additionalProperties:
-              type: object
-              properties:
-                added:
-                  type: string
-                removed:
-                  type: string
+            '$ref': './common.yaml#/ChangeSet'
 
 DeleteComponent:
   type: object

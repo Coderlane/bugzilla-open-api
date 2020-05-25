@@ -1,0 +1,69 @@
+get:
+  summary: Search for a user or users
+  operationId: searchUsers
+  parameters:
+    - in: query
+      name: ids
+      schema:
+        type: array
+        items:
+          type: integer
+    - in: query
+      name: names
+      schema:
+        type: array
+        items:
+          type: string
+    - in: query
+      name: match
+      schema:
+        type: array
+        items:
+          type: string
+    - in: query
+      name: limit
+      schema:
+        type: integer
+    - in: query
+      name: include_disabled
+      schema:
+        type: boolean
+    - in: query
+      name: group_ids
+      schema:
+        type: array
+        items:
+          type: integer
+    - in: query
+      name: groups
+      schema:
+        type: array
+        items:
+          type: string
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/user.yaml#/GetUserResponse'
+
+post:
+  summary: Create a user
+  operationId: createUser
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../types/user.yaml#/CreateUser'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            title: CreateUserResponse
+            type: object
+            properties:
+              id:
+                type: integer

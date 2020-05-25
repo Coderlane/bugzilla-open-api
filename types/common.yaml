@@ -1,0 +1,53 @@
+StringArray:
+  type: object
+  properties:
+    add:
+      type: array
+      items:
+        type: string
+    remove:
+      type: array
+      items:
+        type: string
+
+StringSet:
+  type: object
+  properties:
+    add:
+      type: array
+      items:
+        type: string
+    remove:
+      type: array
+      items:
+        type: string
+    set:
+      type: array
+      items:
+        type: string
+
+IntegerSet:
+  type: object
+  properties:
+    add:
+      type: array
+      items:
+        type: integer
+    remove:
+      type: array
+      items:
+        type: integer
+    set:
+      type: array
+      items:
+        type: integer
+
+ChangeSet:
+  type: object
+  additionalProperties:
+    type: object
+    properties:
+      added:
+        type: string
+      removed:
+        type: string

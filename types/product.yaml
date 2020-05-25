@@ -75,14 +75,7 @@ UpdateProductResponse:
           id:
             type: integer
           changes:
-            type: object
-            additionalProperties:
-              type: object
-              properties:
-                added:
-                  type: string
-                removed:
-                  type: string
+            '$ref': './common.yaml#/ChangeSet'
 
 CreateProduct:
   type: object

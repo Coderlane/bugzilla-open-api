@@ -1,0 +1,38 @@
+get:
+  summary: Get a user
+  operationId: getUser
+  parameters:
+    - in: path
+      name: id
+      schema:
+        type: integer
+      required: true
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/user.yaml#/GetUserResponse'
+
+put:
+  summary: Update a user or users
+  operationId: updateUser
+  parameters:
+    - in: path
+      name: id
+      schema:
+        type: integer
+      required: true
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../types/user.yaml#/UpdateUser'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/user.yaml#/UpdateUserResponse'
