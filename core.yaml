@@ -20,26 +20,24 @@ paths:
     '$ref': './endpoints/bug-by-id.yaml'
   '/bug/{id}/comment':
     '$ref': './endpoints/bug-comment.yaml'
-  '/bug/comment/tags/{tag}':
-    '$ref': './endpoints/bug-comment-tag.yaml'
-  '/bug/comment/{id}/tags':
-    '$ref': './endpoints/bug-comment-tag-update.yaml'
-  '/bug/{id}/history':
-    '$ref': './endpoints/bug-history.yaml'
   '/bug/{id}/attachment':
     '$ref': './endpoints/bug-attachment.yaml'
+  '/bug/{id}/history':
+    '$ref': './endpoints/bug-history.yaml'
   '/bug/attachment/{id}':
     '$ref': './endpoints/attachment.yaml'
-  '/product':
-    '$ref': './endpoints/product.yaml'
-  '/product/{id}':
-    '$ref': './endpoints/product-by-id.yaml'
+  '/bug/comment/{id}/tags':
+    '$ref': './endpoints/bug-comment-tag-update.yaml'
+  '/bug/comment/tags/{tag}':
+    '$ref': './endpoints/bug-comment-tag.yaml'
   '/component':
     '$ref': './endpoints/component.yaml'
   '/component/{id}':
     '$ref': './endpoints/component-by-id.yaml'
   '/component/{product_name}/{component_name}':
     '$ref': './endpoints/component-by-name.yaml'
+  '/extensions':
+    '$ref': './endpoints/extensions.yaml'
   '/flags_type':
     '$ref': './endpoints/flag.yaml'
   '/flags_type/{id}':
@@ -48,24 +46,26 @@ paths:
     '$ref': './endpoints/flag-by-product.yaml'
   '/flags_type/{product}/{component}':
     '$ref': './endpoints/flag-by-product-component.yaml'
+  '/last_audit_time':
+    '$ref': './endpoints/last_audit_time.yaml'
+  '/parameters':
+    '$ref': './endpoints/parameters.yaml'
+  '/product':
+    '$ref': './endpoints/product.yaml'
+  '/product/{id}':
+    '$ref': './endpoints/product-by-id.yaml'
+  '/time':
+    '$ref': './endpoints/time.yaml'
+  '/timezone':
+    '$ref': './endpoints/timezone.yaml'
   '/user':
     '$ref': './endpoints/user.yaml'
   '/user/{id}':
     '$ref': './endpoints/user-by-id.yaml'
-  '/whoami':
-    '$ref': './endpoints/whoami.yaml'
   '/version':
     '$ref': './endpoints/version.yaml'
-  '/extensions':
-    '$ref': './endpoints/extensions.yaml'
-  '/timezone':
-    '$ref': './endpoints/timezone.yaml'
-  '/time':
-    '$ref': './endpoints/time.yaml'
-  '/parameters':
-    '$ref': './endpoints/parameters.yaml'
-  '/last_audit_time':
-    '$ref': './endpoints/last_audit_time.yaml'
+  '/whoami':
+    '$ref': './endpoints/whoami.yaml'
 components:
   securitySchemes:
     ApiKeyAuth:
