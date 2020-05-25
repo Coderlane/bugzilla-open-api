@@ -1,0 +1,17 @@
+get:
+  summary: Get a field by its ID
+  operationId: getField
+  parameters:
+  - name: id
+    in: path
+    description: ID of the field
+    required: true
+    schema:
+      type: integer
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/field.yaml#/GetFieldResponse'

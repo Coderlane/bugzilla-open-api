@@ -1,0 +1,64 @@
+FieldValue:
+  type: object
+  properties:
+    name:
+      type: string
+    sort_key:
+      type: integer
+    visibility_values:
+      type: array
+      items:
+        type: object
+    is_active:
+      type: boolean
+    description:
+      type: string
+    is_open:
+      type: boolean
+    can_change_to:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          comment_required:
+            type: boolean
+
+Field:
+  type: object
+  properties:
+    id:
+      type: integer
+    type:
+      type: integer
+      maximum: 10
+      minimum: 0
+    is_custom:
+      type: boolean
+    name:
+      type: string
+    is_mandatory:
+      type: boolean
+    is_on_bug_entry:
+      type: boolean
+    visibility_field:
+      type: string
+    visibility_values:
+      type: array
+      items:
+        '$ref': '#/FieldValue'
+    value_field:
+      type: string
+    values:
+      type: array
+      items:
+        '$ref': '#/FieldValue'
+
+GetFieldResponse:
+  type: object
+  properties:
+    fields:
+      type: array
+      items:
+        '$ref': '#/Field'

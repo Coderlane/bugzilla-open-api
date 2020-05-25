@@ -1,0 +1,11 @@
+get:
+  summary: Get all fields
+  operationId: getFields
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            type: object
+            '$ref': '../types/field.yaml#/GetFieldResponse'

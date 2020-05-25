@@ -38,6 +38,10 @@ paths:
     '$ref': './endpoints/component-by-name.yaml'
   '/extensions':
     '$ref': './endpoints/extensions.yaml'
+  '/field/bug':
+    '$ref': './endpoints/field.yaml'
+  '/field/bug/{id}':
+    '$ref': './endpoints/field-by-id.yaml'
   '/flags_type':
     '$ref': './endpoints/flag.yaml'
   '/flags_type/{id}':
