@@ -1,6 +1,8 @@
 get:
   summary: Get attachments on a bug
   operationId: getBugAttachments
+  tags:
+    - attachments
   parameters:
   - name: id
     in: path
@@ -19,6 +21,8 @@ get:
 post:
   summary: Create an attachement on a bug
   operationId: createBugAttachment
+  tags:
+    - attachments
   parameters:
   - name: id
     in: path

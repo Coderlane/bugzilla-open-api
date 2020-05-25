@@ -1,6 +1,8 @@
 get:
   summary: Get comments on a bug
   operationId: getBugComments
+  tags:
+    - comments
   parameters:
   - name: id
     in: path
@@ -19,6 +21,8 @@ get:
 post:
   summary: Create comment on a bug
   operationId: createBugComment
+  tags:
+    - comments
   parameters:
   - name: id
     in: path

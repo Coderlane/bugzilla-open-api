@@ -1,6 +1,8 @@
 get:
   summary: Get a bug by its ID
   operationId: getBug
+  tags:
+    - bugs
   parameters:
   - name: id
     in: path
@@ -19,6 +21,8 @@ get:
 put:
   summary: Update a bug
   operationId: updateBug
+  tags:
+    - bugs
   parameters:
   - name: id
     in: path

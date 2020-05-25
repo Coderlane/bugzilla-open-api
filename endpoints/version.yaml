@@ -1,6 +1,8 @@
 get:
   summary: Get the version of the Bugzilla instance
   operationId: getVersion
+  tags:
+    - info
   responses:
     '200':
       description: Successful operation

@@ -1,6 +1,8 @@
 get:
   summary: Get all fields
   operationId: getFields
+  tags:
+    - fields
   responses:
     '200':
       description: Successful operation

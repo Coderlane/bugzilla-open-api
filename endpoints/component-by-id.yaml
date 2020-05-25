@@ -1,6 +1,8 @@
 put:
   summary: Update a component or components
   operationId: updateComponent
+  tags:
+    - components
   parameters:
     - in: path
       name: id
@@ -23,6 +25,8 @@ put:
 delete:
   summary: Delete a component
   operationId: deleteComponent
+  tags:
+    - components
   parameters:
     - in: path
       name: id

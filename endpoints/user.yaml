@@ -1,6 +1,8 @@
 get:
   summary: Search for a user or users
   operationId: searchUsers
+  tags:
+    - users
   parameters:
     - in: query
       name: ids
@@ -51,6 +53,8 @@ get:
 post:
   summary: Create a user
   operationId: createUser
+  tags:
+    - users
   requestBody:
     content:
       application/json:

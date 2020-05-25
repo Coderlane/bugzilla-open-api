@@ -1,6 +1,8 @@
 put:
   summary: Update tags on a comment
   operationId: updateCommentTag
+  tags:
+    - comment_tags
   parameters:
   - name: id
     in: path

@@ -1,6 +1,8 @@
 get:
   summary: Get flags on a product
   operationId: getFlagsByProduct
+  tags:
+    - flags
   parameters:
     - in: path
       name: product

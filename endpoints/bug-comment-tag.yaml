@@ -1,6 +1,8 @@
 get:
   summary: Search for comment tags similar to the provided tag
   operationId: searchCommentTag
+  tags:
+    - comment_tags
   parameters:
   - name: tag
     in: path

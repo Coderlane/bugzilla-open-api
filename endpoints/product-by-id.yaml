@@ -1,6 +1,8 @@
 get:
   summary: Get a product
   operationId: getProduct
+  tags:
+    - products
   parameters:
     - in: path
       name: id
@@ -18,6 +20,8 @@ get:
 put:
   summary: Update a product or products
   operationId: updateProduct
+  tags:
+    - products
   parameters:
     - in: path
       name: id

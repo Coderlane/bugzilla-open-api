@@ -1,6 +1,8 @@
 post:
   summary: Create a component
   operationId: createComponent
+  tags:
+    - components
   requestBody:
     content:
       application/json:

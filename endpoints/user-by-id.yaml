@@ -1,6 +1,8 @@
 get:
   summary: Get a user
   operationId: getUser
+  tags:
+    - users
   parameters:
     - in: path
       name: id
@@ -18,6 +20,8 @@ get:
 put:
   summary: Update a user or users
   operationId: updateUser
+  tags:
+    - users
   parameters:
     - in: path
       name: id

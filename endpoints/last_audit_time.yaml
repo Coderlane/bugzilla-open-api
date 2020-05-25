@@ -1,6 +1,8 @@
 get:
   summary: Get the last audit timestamp
   operationId: getLastAuditTime
+  tags:
+    - info
   parameters:
     - in: query
       name: class

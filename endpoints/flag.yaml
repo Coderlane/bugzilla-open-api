@@ -1,6 +1,8 @@
 post:
   summary: Create a flag
   operationId: createFlag
+  tags:
+    - flags
   requestBody:
     content:
       application/json:

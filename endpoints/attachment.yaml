@@ -1,6 +1,8 @@
 get:
   summary: Get an attachment
   operationId: getAttachment
+  tags:
+    - attachments
   parameters:
   - name: id
     in: path
@@ -19,6 +21,8 @@ get:
 put:
   summary: Update an attachment
   operationId: updateAttachment
+  tags:
+    - attachments
   parameters:
   - name: id
     in: path

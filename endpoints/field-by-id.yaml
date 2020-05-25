@@ -1,6 +1,8 @@
 get:
   summary: Get a field by its ID
   operationId: getField
+  tags:
+    - fields
   parameters:
   - name: id
     in: path

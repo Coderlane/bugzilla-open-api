@@ -1,6 +1,8 @@
 post:
   summary: Create a bug
   operationId: createBug
+  tags:
+    - bugs
   requestBody:
     content:
       application/json:
@@ -21,6 +23,8 @@ post:
 get:
   summary: Search for bugs
   operationId: searchBugs
+  tags:
+    - bugs
   parameters:
     - in: query
       name: assigned_to

@@ -1,6 +1,8 @@
 get:
   summary: Get the timezone on the Bugzilla instance
   operationId: getTimezone
+  tags:
+    - info
   responses:
     '200':
       description: Successful operation

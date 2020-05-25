@@ -1,6 +1,8 @@
 get:
   summary: Get history for a bug
   operationId: getBugHistory
+  tags:
+    - history
   parameters:
   - name: id
     in: path

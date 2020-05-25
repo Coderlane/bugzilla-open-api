@@ -1,6 +1,8 @@
 get:
   summary: Get the installed extensions of the Bugzilla instance
   operationId: getExtensions
+  tags:
+    - info
   responses:
     '200':
       description: Successful operation

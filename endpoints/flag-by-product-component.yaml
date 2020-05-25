@@ -1,6 +1,8 @@
 get:
   summary: Get flags types on a component on a product
   operationId: getFlagsByProductAndComponent
+  tags:
+    - flags
   parameters:
     - in: path
       name: product

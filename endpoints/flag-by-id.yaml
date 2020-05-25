@@ -1,6 +1,8 @@
 put:
   summary: Update a flag or flags
   operationId: updateFlag
+  tags:
+    - flags
   parameters:
     - in: path
       name: id
