@@ -1,0 +1,50 @@
+Group:
+  type: object
+  properties:
+    membership:
+      type: array
+      items:
+        '$ref': './user.yaml#FullUser'
+    is_active:
+      type: boolean
+    description:
+      type: string
+    user_regexp:
+      type: string
+    is_bug_group:
+      type: boolean
+    name:
+      type: string
+    id:
+      type: integer
+
+CreateGroup:
+  type: object
+  required:
+    - name
+    - description
+  properties:
+    name:
+      type: string
+    description:
+      type: string
+    user_regexp:
+      type: string
+    is_active:
+      type: boolean
+    icon_url:
+      type: string
+
+GroupResponse:
+  type: object
+  properties:
+    groups:
+      type: array
+      items:
+        '$ref': '#/Group'
+
+UpdateGroupResponse:
+  type: object
+  properties:
+    groups:
+      '$ref': './common.yaml#UpdateChangeSetResponse'

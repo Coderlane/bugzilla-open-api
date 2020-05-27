@@ -1,0 +1,55 @@
+get:
+  summary: Get a group by its ID
+  operationId: getGroup
+  tags:
+    - groups
+  parameters:
+  - name: id
+    in: path
+    description: ID of the group
+    required: true
+    schema:
+      type: integer
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/group.yaml#/GroupResponse'
+
+put:
+  summary: Update a group or groups
+  operationId: updateGroup
+  tags:
+    - groups
+  parameters:
+    - in: path
+      name: id
+      schema:
+        type: integer
+      required: true
+    - in: query
+      name: ids
+      schema:
+        type: array
+        items:
+          type: string
+    - in: query
+      name: names
+      schema:
+        type: array
+        items:
+          type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          '$ref': '../types/group.yaml#/CreateGroup'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/group.yaml#/UpdateGroupResponse'

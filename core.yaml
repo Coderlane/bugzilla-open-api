@@ -50,6 +50,10 @@ paths:
     '$ref': './endpoints/flag-by-product.yaml'
   '/flags_type/{product}/{component}':
     '$ref': './endpoints/flag-by-product-component.yaml'
+  '/group':
+    '$ref': './endpoints/group.yaml'
+  '/group/{id}':
+    '$ref': './endpoints/group-by-id.yaml'
   '/last_audit_time':
     '$ref': './endpoints/last_audit_time.yaml'
   '/parameters':

@@ -1,0 +1,51 @@
+post:
+  summary: Create a group
+  operationId: createGroup
+  tags:
+    - groups
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../types/group.yaml#/CreateGroup'
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            title: CreateGroupResponse
+            type: object
+            properties:
+              id:
+                type: integer
+
+get:
+  summary: Search for groups
+  operationId: searchGroups
+  tags:
+    - groups
+  parameters:
+    - in: query
+      name: ids
+      schema:
+        type: array
+        items:
+          type: string
+    - in: query
+      name: names
+      schema:
+        type: array
+        items:
+          type: string
+    - in: query
+      name: membership
+      schema:
+        type: boolean
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            '$ref': '../types/group.yaml#/GroupResponse'
