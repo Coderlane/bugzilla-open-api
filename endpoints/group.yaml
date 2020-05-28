@@ -42,6 +42,24 @@ get:
       name: membership
       schema:
         type: boolean
+    - name: exclude_fields
+      in: query
+      description: Fields to be excluded from the results
+      schema:
+        type: array
+        items:
+          type: string
+      style: form
+      explode: false
+    - name: include_fields
+      in: query
+      description: Fields to be included in the results
+      schema:
+        type: array
+        items:
+          type: string
+      style: form
+      explode: false
   responses:
     '200':
       description: Successful operation
