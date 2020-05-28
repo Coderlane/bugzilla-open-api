@@ -37,13 +37,6 @@ ItemMap:
     items:
       type: string
 
-InclusionExclusion:
-  oneOf:
-    - type: array
-      items:
-        type: string
-    - '$ref': '#/ItemMap'
-
 CreateFlag:
   type: object
   required:
@@ -58,9 +51,12 @@ CreateFlag:
       type: string
       enum: [bug, attachment]
     inclusions:
-      '$ref': '#/InclusionExclusion'
+      # OpenAPI only supports oneOf when there is a property name to determine
+      # the underlying type. We don't have that capability here, so limit the
+      # generated type to the most verbose form.
+      '$ref': '#/ItemMap'
     exclusions:
-      '$ref': '#/InclusionExclusion'
+      '$ref': '#/ItemMap'
     sort_key:
       type: integer
       minimum: 1
