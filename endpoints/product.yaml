@@ -1,6 +1,8 @@
 get:
   summary: Search for products
   operationId: searchProducts
+  tags:
+    - products
   parameters:
     - in: query
       name: ids
@@ -49,6 +51,8 @@ get:
 post:
   summary: Create a product
   operationId: createProduct
+  tags:
+    - products
   requestBody:
     content:
       application/json:
