@@ -1,10 +1,20 @@
 Group:
   type: object
   properties:
+    id:
+      type: integer
+    name:
+      type: string
+    description:
+      type: string
+
+FullGroup:
+  type: object
+  properties:
     membership:
       type: array
       items:
-        '$ref': './user.yaml#FullUser'
+        '$ref': './user.yaml#/FullUser'
     is_active:
       type: boolean
     description:
@@ -41,10 +51,10 @@ GroupResponse:
     groups:
       type: array
       items:
-        '$ref': '#/Group'
+        '$ref': '#/FullGroup'
 
 UpdateGroupResponse:
   type: object
   properties:
     groups:
-      '$ref': './common.yaml#UpdateChangeSetResponse'
+      '$ref': './common.yaml#/UpdateChangeSetResponse'

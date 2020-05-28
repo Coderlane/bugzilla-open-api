@@ -10,16 +10,6 @@ User:
     real_name:
       type: string
 
-Group:
-  type: object
-  properties:
-    id:
-      type: integer
-    name:
-      type: string
-    description:
-      type: string
-
 Search:
   type: object
   properties:
@@ -48,7 +38,7 @@ FullUser:
     groups:
       type: array
       items:
-        '$ref': '#/Group'
+        '$ref': './group.yaml#/Group'
     saved_searches:
       type: array
       items:
