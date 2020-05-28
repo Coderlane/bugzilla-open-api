@@ -9,8 +9,4 @@ get:
       content:
         application/json:
           schema:
-            title: GetVersionResponse
-            type: object
-            properties:
-              version:
-                type: string
+            '$ref': '../types/info.yaml#/GetVersionResponse'

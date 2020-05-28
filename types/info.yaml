@@ -1,0 +1,13 @@
+GetExtensionsResponse:
+  type: object
+  additionalProperties:
+    type: object
+    properties:
+      version:
+        type: string
+
+GetVersionResponse:
+  type: object
+  properties:
+    version:
+      type: string
